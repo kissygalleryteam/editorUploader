@@ -1,3 +1,3 @@
-/*! editorUploader - v1.0 - 2013-05-17 10:21:15 AM
+/*! editorUploader - v1.0 - 2013-05-19 5:43:16 PM
 * Copyright (c) 2013 minghe; Licensed  */
-KISSY.add("gallery/editorUploader/1.0/index",function(e,r,a){function l(e){var r=this;alert(1),l.superclass.constructor.call(r,e)}return r.all,e.extend(l,a,{},{ATTRS:{}}),l},{requires:["node","base"]});
+KISSY.add("gallery/editorUploader/1.0/index",function(i,o,e){function d(i){this.config=i||{}}return i.config("modules",{"editor/plugin/editor-upload/dialog":{alias:["gallery/editorUploader/1.0/dialog"]}}),i.augment(d,{pluginRenderUI:function(i){var d=this;i.addButton("multipleUpload",{tooltip:"批量插图",listeners:{click:function(){e.useDialog(i,"editor-upload",d.config)}},mode:o.WYSIWYG_MODE})}}),d},{requires:["editor","editor/plugin/dialog-loader/index"]});
