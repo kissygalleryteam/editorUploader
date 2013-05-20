@@ -1,12 +1,12 @@
 {
     "name": "editorUploader",
     "version": "1.0",
-    "desc": "请修改组件描述",
+    "desc": "Kissy Editor新的图片上传插件",
     "cover": "",
     "author": {
         "name": "minghe",
         "email": "minghe12@126.com",
-        "page": "请修改作者个人首页"
+        "page": "https://github.com/minghe"
     },
     "type": "kissy-pie",
     "type-url": "http://abc.alibaba-inc.com/r/kissy-pie"
