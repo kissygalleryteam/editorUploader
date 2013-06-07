@@ -33,7 +33,7 @@ KISSY.add(function (S,Node, Editor,DragPlugin,Overlay4E,Uploader,EditorMultipleU
                         })
                     ],
                     focus4e: false,
-                    width: "600px"
+                    width: "602px"
                 }).render();
 
                 self.addRes(self.dialog);
@@ -69,21 +69,20 @@ KISSY.add(function (S,Node, Editor,DragPlugin,Overlay4E,Uploader,EditorMultipleU
             var self = this;
             var config = self.config;
             if(self.uploader) return false;
+            var queueTarget = config.queueTarget;
             var uploader = new Uploader(config.target,config);
             self.uploader = uploader;
             //使用主题
             uploader.theme(new EditorMultipleUploader({
-                queueTarget:config.queueTarget
+                queueTarget:queueTarget
             }))
             //验证插件
             uploader.plug(new Auth(config.auth || {}))
                 //进度条集合
                 .plug(new ProBars({isHide:false}))
             ;
-
-            var $ = S.Node.all;
-            var $queueWrapper = $('.J_UploaderQueueWrapper');
-            var $insert = $('.J_InsertContent');
+            var $queueWrapper = $(queueTarget).parent().parent('.J_UploaderQueueWrapper');
+            var $insert = $queueWrapper.all('.J_InsertContent');
             $insert.on('click',self._insertHandler,self);
             uploader.on('add',function(ev){
                 if($queueWrapper.css('display') == 'none'){
@@ -127,6 +126,8 @@ KISSY.add(function (S,Node, Editor,DragPlugin,Overlay4E,Uploader,EditorMultipleU
 
                 queue.remove(file.id);
             })
+            var dialog = self.dialog;
+            dialog.hide();
         }
     });
 
