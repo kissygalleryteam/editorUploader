@@ -1,7 +1,5 @@
-/**
- * multipleUpload button
- * @author yiminghe@gmail.com
- */
+//批量上传模块
+//by 明河
 KISSY.add(function (S, Editor, DialogLoader) {
     S.config('modules',{
         "editor/plugin/editor-upload/dialog": {alias: ['gallery/editorUploader/1.4/dialog']}
