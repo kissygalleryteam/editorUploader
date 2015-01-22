@@ -29,7 +29,7 @@ editorContainer为editor使用的容器。
         KISSY.use("editor/plugin/source-area," +
                 "editor/plugin/font-size," +
                 "editor/plugin/code,"+
-                "kg/editoruploader/2.0.1/index", function (S, SourceArea, FontSize,Code,EditorUploader) {
+                "kg/editoruploader/2.0.2/index", function (S, SourceArea, FontSize,Code,EditorUploader) {
             //初始化上传插件
             var editorUploader = new EditorUploader({
                 prefix:'demo-',
@@ -54,7 +54,7 @@ editorContainer为editor使用的容器。
 
     });
 
-use kg/editoruploader/2.0.1/index插件，EditorUploader的配置请看Uploader组件。prefix是插件特有的，用于给目标元素钩子打上特殊的前缀。
+use kg/editoruploader/2.0.2/index插件，EditorUploader的配置请看Uploader组件。prefix是插件特有的，用于给目标元素钩子打上特殊的前缀。
 
 其他都是editor的配置。
 
