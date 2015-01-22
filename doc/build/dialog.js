@@ -1,10 +1,10 @@
 /*
 combined files : 
 
-kg/editoruploader/2.0.1/dialog
+kg/editoruploader/2.0.3/dialog
 
 */
-KISSY.add('kg/editoruploader/2.0.1/dialog',function (S,Node,Editor,Dialog4E,XTemplate) {
+KISSY.add('kg/editoruploader/2.0.3/dialog',function (S,Node,Editor,Dialog4E,XTemplate) {
     var $ = Node.all;
     //批量上传模块
     //by 明河
