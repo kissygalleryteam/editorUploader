@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>编辑器的上传插件演示</title>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js" charset="utf-8"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
     <link href="http://g.tbcdn.cn/kissy/k/1.4.0/css/dpl/base-min.css" rel="stylesheet"/>
     <link href="http://g.tbcdn.cn/kissy/k/1.4.0/editor/theme/cool/editor-min.css" rel="stylesheet"/>
 </head>
@@ -25,23 +25,13 @@
 <script>
 (function () {
     var S = KISSY;
-    S.config({
-        packages:[
-            {
-                name:"kg",
-                path:"http://g.tbcdn.cn/kg/",
-                charset:"utf-8",
-                ignorePackageNameInUri:true
-            }
-        ]
-    });
 
     if (S.Config.debug) {
         var srcPath = "../src/";
         S.config({
             packages:[
                 {
-                    name:"kg/editorUploader/2.0.0",
+                    name:"kg/editoruploader/2.0.1",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -63,7 +53,7 @@
         KISSY.use("editor/plugin/source-area," +
                 "editor/plugin/font-size," +
                 "editor/plugin/code,"+
-                "kg/editorUploader/2.0.0/index", function (S, SourceArea, FontSize,Code,EditorUploader) {
+                "kg/editoruploader/2.0.1/index", function (S, SourceArea, FontSize,Code,EditorUploader) {
             //初始化上传插件
             var editorUploader = new EditorUploader({
                 prefix:'demo-',

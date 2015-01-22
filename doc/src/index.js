@@ -2,7 +2,7 @@
 //by 明河
 KISSY.add(function (S, Editor, DialogLoader) {
     S.config('modules',{
-        "editor/plugin/editor-upload/dialog": {alias: ['kg/editorUploader/2.0.0/dialog']}
+        "editor/plugin/editor-upload/dialog": {alias: ['kg/editoruploader/2.0.1/dialog']}
     });
     function multipleUpload(config) {
         if(!config.tpl){
