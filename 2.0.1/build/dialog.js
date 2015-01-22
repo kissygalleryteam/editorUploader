@@ -46,7 +46,7 @@ KISSY.add('kg/editoruploader/2.0.1/dialog',function (S,Node,Editor,Dialog4E,XTem
             var target = '#'+config.prefix+'uploader-button';
             var queueTarget = '.'+config.prefix+'uploader-queue';
 
-            S.use('gallery/uploader/1.5/aliUploader,gallery/uploader/1.5/plugins/auth/auth,gallery/uploader/1.5/plugins/proBars/proBars,gallery/uploader/1.5/themes/editorMultipleUploader/index,gallery/uploader/1.5/themes/editorMultipleUploader/style.css', function (S, AliUploader,Auth,ProBars,ImageUploader) {
+            S.use('kg/uploader/2.0.2/aliUploader,kg/uploader/2.0.2/plugins/auth/auth,kg/uploader/2.0.2/plugins/proBars/proBars,kg/uploader/2.0.2/themes/editorMultipleUploader/index,kg/uploader/2.0.2/themes/editorMultipleUploader/style.css', function (S, AliUploader,Auth,ProBars,ImageUploader) {
                 var uploader = new AliUploader(target,config);
                 self.uploader = uploader;
                 //使用主题
