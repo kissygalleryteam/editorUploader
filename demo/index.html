@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>编辑器的上传插件演示</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <link href="http://g.tbcdn.cn/kissy/k/1.4.0/css/dpl/base-min.css" rel="stylesheet"/>
+    <link href="http://g.tbcdn.cn/kissy/k/1.4.0/editor/theme/cool/editor-min.css" rel="stylesheet"/>
+</head>
+<body>
+<h2>编辑器的上传插件演示</h2>
+<p>1.4版基于kissy1.4，使用uploader1.5，如果是淘宝的页面，使用通用接口，不支持的情况下，可以手动传action参数，执行服务器路径。</p>
+<form id="f" method="post">
+    <div style="width: 90%;margin: 20px auto;">
+        <p>
+            <label>标题: <input></label>
+        </p>
+
+        <div id="editorContainer">
+
+        </div>
+    </div>
+</form>
+
+<script>
+(function () {
+    var S = KISSY;
+
+    if (S.Config.debug) {
+        var srcPath = "../src/";
+        S.config({
+            packages:[
+                {
+                    name:"kg/editoruploader/2.0.3",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+
+    KISSY.use("editor", function (S, Editor) {
+        var cfg = {
+            // 是否初始聚焦
+            focused:true,
+            attachForm:true,
+            render:'#editorContainer',
+            width:'80%',
+            height:"400px"
+        };
+        KISSY.use("editor/plugin/source-area," +
+                "editor/plugin/font-size," +
+                "editor/plugin/code,"+
+                "kg/editoruploader/2.0.3/index", function (S, SourceArea, FontSize,Code,EditorUploader) {
+            //初始化上传插件
+            var editorUploader = new EditorUploader({
+                prefix:'demo-',
+                multiple:true,
+                autoUpload:false,
+                auth:{
+                    //最多上传个数
+                    max:15,
+                    //图片最大允许大小
+                    maxSize:1024
+                },
+                listeners:{
+                    add:function(ev){
+                        S.log(ev.file);
+                    }
+                }
+            });
+            cfg.plugins = [SourceArea, FontSize,Code,editorUploader];
+
+            new Editor(cfg).render();
+        });
+
+    });
+})();
+</script>
+</body>
+</html>
