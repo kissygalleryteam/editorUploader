@@ -1,14 +1,14 @@
 /*
 combined files : 
 
-kg/editoruploader/2.0.3/index
+kg/editoruploader/2.0.1/index
 
 */
 //批量上传模块
 //by 明河
-KISSY.add('kg/editoruploader/2.0.3/index',function (S, Editor, DialogLoader) {
+KISSY.add('kg/editoruploader/2.0.1/index',function (S, Editor, DialogLoader) {
     S.config('modules',{
-        "editor/plugin/editor-upload/dialog": {alias: ['kg/editoruploader/2.0.3/dialog']}
+        "editor/plugin/editor-upload/dialog": {alias: ['kg/editoruploader/2.0.2/dialog']}
     });
     function multipleUpload(config) {
         if(!config.tpl){
