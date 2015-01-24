@@ -4,7 +4,7 @@ kissy editor的图片上传由于是使用flash上传，很有可能会出现ses
 v1.4基于kissy1.4，使用[uploader1.5](http://gallery.kissyui.com/uploader/1.5/guide/index.html)。
 
 
-* 版本：1.4
+* 版本：2.0.0
 * 作者：明河
 
 ## 组件变更
