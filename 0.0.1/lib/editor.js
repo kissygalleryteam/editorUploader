@@ -6,6 +6,7 @@
 
 var util = require('util');
 var $ = require('node');
+var _URL = require('url');
 var iframeContentRender = require('./editor/xtpl/iframe-render');
 var Editor = require('editor/base');
 var Utils = require('editor/utils');
@@ -1072,7 +1073,7 @@ function fixByBindIframeDoc(self) {
 function prepareIFrameHTML(id, customStyle, customLink, data) {
     var links = '';
     var i;
-    var innerCssFile = require.toUrl('./editor/assets/iframe.css');
+    var innerCssFile = new _URL('./editor/assets/iframe.css', '//g.alicdn.com/kg/editor/0.0.1/').toString();
     customLink = customLink.concat([]);
     customLink.unshift(innerCssFile);
     for (i = 0; i < customLink.length; i++) {

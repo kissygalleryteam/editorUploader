@@ -1,5 +1,5 @@
-//! Copyright 2015, kissy-gallery-editor@1.0.2 MIT Licensed, build time: Thu, 05 Feb 2015 13:17:29 GMT 
-define("kg/editor/0.0.1/index", ["kg/html-parser/0.0.1/","ua","node","util","kg/xtemplate/4.1.4/runtime","kg/component/0.0.1/control","dom"], function(require, exports, module) {
+//! Copyright 2015, kissy-gallery-editor@1.0.2 MIT Licensed, build time: Thu, 05 Feb 2015 13:32:20 GMT 
+define("kg/editor/0.0.1/index", ["kg/html-parser/0.0.1/","ua","node","util","kg/xtemplate/4.1.4/runtime","kg/component/0.0.1/control","dom","url"], function(require, exports, module) {
 var htmlParser = require("kg/html-parser/0.0.1/");
 var ua = require("ua");
 var _node_ = require("node");
@@ -7,6 +7,7 @@ var _util_ = require("util");
 var xtemplateRuntime = require("kg/xtemplate/4.1.4/runtime");
 var componentControl = require("kg/component/0.0.1/control");
 var dom = require("dom");
+var url = require("url");
 /*
 combined modules:
 editor
@@ -4852,6 +4853,7 @@ editorClipboard = function (exports) {
 _editor_ = function (exports) {
   var util = _util_;
   var $ = _node_;
+  var _URL = url;
   var iframeContentRender = editorXtplIframeRender;
   var Editor = editorBase;
   var Utils = editorUtils;
@@ -5457,7 +5459,7 @@ _editor_ = function (exports) {
   function prepareIFrameHTML(id, customStyle, customLink, data) {
     var links = '';
     var i;
-    var innerCssFile = require.toUrl('./editor/assets/iframe.css');
+    var innerCssFile = new _URL('./editor/assets/iframe.css', '//g.alicdn.com/kg/editor/0.0.1/').toString();
     customLink = customLink.concat([]);
     customLink.unshift(innerCssFile);
     for (i = 0; i < customLink.length; i++) {
