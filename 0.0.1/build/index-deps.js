@@ -1,0 +1,2 @@
+//! Copyright 2015, kissy-gallery-editor@1.0.2 MIT Licensed, build time: Thu, 05 Feb 2015 13:17:29 GMT 
+KISSY.config({"modules":{"editor":["util","node","ua","kg/xtemplate/4.1.4/runtime","kg/html-parser/0.0.1/","kg/component/0.0.1/control","dom"]}});;
