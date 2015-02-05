@@ -1,0 +1,26 @@
+{
+    "name": "modulex-editor",
+    "author": "yiminghe <yiminghe@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/kissyteam/editor.git"
+    },
+    "ignore": [
+        "**/*",
+        "!build/**/*",
+        "!lib/**/*",
+        "!meta/**/*",
+        "!index.js"
+    ],
+    "dependencies": {
+        "modulex": "*",
+        "modulex-feature": "modulex-feature#1.x",
+        "modulex-ua": "modulex-ua#1.x",
+        "modulex-html-parser": "modulex-html-parser#1.x",
+        "modulex-component": "modulex-component#1.x"
+    },
+    "devDependencies": {
+        "modulex-css": "modulex-css#1.x"
+    }
+}
