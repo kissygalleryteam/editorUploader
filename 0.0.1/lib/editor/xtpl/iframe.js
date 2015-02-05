@@ -1,4 +1,4 @@
-/*compiled by xtemplate#3.3.1*/
+/*compiled by xtemplate#3.7.1*/
 var ret = module.exports = function iframe(undefined){
 var t;
 var t0;
@@ -39,31 +39,31 @@ var macroCommand = nativeCommands["macro"];
 var debuggerCommand = nativeCommands["debugger"];
 
 
-buffer.data += '<!doctype html>\r\n<html>\r\n<head>';
+buffer.data += '<!doctype html>\n<html>\n<head>';
 pos.line = 3;
 var id0 = ((t=(affix.doctype)) !== undefined ? t:((t = data.doctype) !== undefined ? t :scope.resolveLooseUp(["doctype"])));
 buffer = buffer.write(id0);
-buffer.data += '\r\n    <title>';
+buffer.data += '\n    <title>';
 pos.line = 4;
 var id1 = ((t=(affix.title)) !== undefined ? t:((t = data.title) !== undefined ? t :scope.resolveLooseUp(["title"])));
 buffer = buffer.write(id1);
-buffer.data += '</title>\r\n    ';
+buffer.data += '</title>\n    ';
 pos.line = 5;
 var id2 = ((t=(affix.style)) !== undefined ? t:((t = data.style) !== undefined ? t :scope.resolveLooseUp(["style"])));
 buffer = buffer.write(id2);
-buffer.data += '\r\n    ';
+buffer.data += '\n    ';
 pos.line = 6;
 var id3 = ((t=(affix.links)) !== undefined ? t:((t = data.links) !== undefined ? t :scope.resolveLooseUp(["links"])));
 buffer = buffer.write(id3);
-buffer.data += '\r\n    </head> \r\n<body class="ks-editor">\r\n';
+buffer.data += '\n    </head> \n<body class="ks-editor">\n';
 pos.line = 9;
 var id4 = ((t=(affix.data)) !== undefined ? t:((t = data.data) !== undefined ? t :scope.resolveLooseUp(["data"])));
 buffer = buffer.write(id4);
-buffer.data += '\r\n';
+buffer.data += '\n';
 pos.line = 10;
 var id5 = ((t=(affix.script)) !== undefined ? t:((t = data.script) !== undefined ? t :scope.resolveLooseUp(["script"])));
 buffer = buffer.write(id5);
-buffer.data += '\r\n</body> \r\n</html>';
+buffer.data += '\n</body> \n</html>';
 return buffer;
 };
 ret.TPL_NAME = module.id || module.name;

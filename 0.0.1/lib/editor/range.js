@@ -128,7 +128,7 @@ function getCheckStartEndBlockEvalFunction(isStart) {
             var nodeName = Dom.nodeName(node);
             // If there are non-empty inline elements (e.g. <img />), then we're not
             // at the start.
-            if (!inlineChildReqElements[ nodeName ]) {
+            if (!inlineChildReqElements[nodeName]) {
                 // If we're working at the end-of-block, forgive the first <br /> in non-IE
                 // browsers.
                 if (!isStart && !UA.ie && nodeName === 'br' && !hadBr) {
@@ -241,8 +241,8 @@ function execContentsAction(self, action) {
     var i, topStart, topEnd;
 
     for (i = 0; i < startParents.length; i++) {
-        topStart = startParents[ i ];
-        topEnd = endParents[ i ];
+        topStart = startParents[i];
+        topEnd = endParents[i];
 
         // The compared nodes will match until we find the top most
         // siblings (different nodes that have the same parent).
@@ -275,7 +275,7 @@ function execContentsAction(self, action) {
         // 开始节点的路径所在父节点不能 clone(TRUE)，其他节点（结束节点路径左边的节点）可以直接 clone(true)
         currentNode = levelStartNode[0].nextSibling;
 
-        var endParentJ = endParents[ j ],
+        var endParentJ = endParents[j],
             domEndNode = endNode[0],
             domEndParentJ = endParentJ && endParentJ[0];
 
@@ -326,7 +326,7 @@ function execContentsAction(self, action) {
     // Remove all previous sibling nodes for every node in the
     // endParents tree.
     for (var k = i; k < endParents.length; k++) {
-        levelStartNode = endParents[ k ];
+        levelStartNode = endParents[k];
 
         // For Extract and Clone, we must clone this level.
         if (action > 0 && !levelStartNode.equals(endNode)) {
@@ -338,9 +338,9 @@ function execContentsAction(self, action) {
         }
 
         // The processing of siblings may have already been done by the parent.
-        if (!startParents[ k ] ||
+        if (!startParents[k] ||
             // 前面 startParents 循环已经处理过了
-            !levelStartNode._4eSameLevel(startParents[ k ])) {
+            !levelStartNode._4eSameLevel(startParents[k])) {
             currentNode = levelStartNode[0].previousSibling;
             while (currentNode) {
                 // Cache the next sibling.
@@ -563,7 +563,7 @@ util.augment(KERange, {
 
         // Fixing invalid range start inside dtd empty elements.
         var self = this;
-        if (startNode[0].nodeType === Dom.NodeType.ELEMENT_NODE && EMPTY[ startNode.nodeName() ]) {
+        if (startNode[0].nodeType === Dom.NodeType.ELEMENT_NODE && EMPTY[startNode.nodeName()]) {
             startNode = startNode.parent();
             startOffset = startNode._4eIndex();
         }
@@ -594,7 +594,7 @@ util.augment(KERange, {
 
         // Fixing invalid range end inside dtd empty elements.
         var self = this;
-        if (endNode[0].nodeType === Dom.NodeType.ELEMENT_NODE && EMPTY[ endNode.nodeName() ]) {
+        if (endNode[0].nodeType === Dom.NodeType.ELEMENT_NODE && EMPTY[endNode.nodeName()]) {
             endNode = endNode.parent();
             endOffset = endNode._4eIndex() + 1;
         }
@@ -1460,8 +1460,8 @@ util.augment(KERange, {
     checkBoundaryOfElement: function (element, checkType) {
         var walkerRange = this.clone();
         // Expand the range to element boundary.
-        walkerRange[ checkType === KER.START ?
-            'setStartAt' : 'setEndAt' ]
+        walkerRange[checkType === KER.START ?
+            'setStartAt' : 'setEndAt']
         (element, checkType === KER.START ?
             KER.POSITION_AFTER_START
             : KER.POSITION_BEFORE_END);
@@ -1469,8 +1469,8 @@ util.augment(KERange, {
         var walker = new Walker(walkerRange);
 
         walker.evaluator = elementBoundaryEval;
-        return walker[ checkType === KER.START ?
-            'checkBackward' : 'checkForward' ]();
+        return walker[checkType === KER.START ?
+            'checkBackward' : 'checkForward']();
     },
 
     /**
@@ -1671,11 +1671,11 @@ util.augment(KERange, {
 
             if (node[0].nodeType === Dom.NodeType.ELEMENT_NODE &&
                 node._4eIsEditable()) {
-                next = node[ isMoveToEnd ? 'last' : 'first' ](nonWhitespaceOrIsBookmark, 1);
+                next = node[isMoveToEnd ? 'last' : 'first'](nonWhitespaceOrIsBookmark, 1);
             }
 
             if (!childOnly && !next) {
-                next = node[ isMoveToEnd ? 'prev' : 'next' ](nonWhitespaceOrIsBookmark, 1);
+                next = node[isMoveToEnd ? 'prev' : 'next'](nonWhitespaceOrIsBookmark, 1);
             }
 
             return next;
@@ -1729,11 +1729,11 @@ util.augment(KERange, {
             tmpDtd,
             last,
             elementName = element.nodeName(),
-            isBlock = dtd.$block[ elementName ];
+            isBlock = dtd.$block[elementName];
         self.deleteContents();
         if (isBlock) {
             current = self.getCommonAncestor(FALSE, TRUE);
-            while ((tmpDtd = dtd[ current.nodeName() ]) && !(tmpDtd && tmpDtd [ elementName ])) {
+            while ((tmpDtd = dtd[current.nodeName()]) && !(tmpDtd && tmpDtd [elementName])) {
                 var parent = current.parent();
                 // If we're in an empty block which indicate a new paragraph,
                 // simply replace it with the inserting block.(#3664)

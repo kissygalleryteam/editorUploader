@@ -291,7 +291,7 @@ function fixSelectionForIEWhenDocReady(editor) {
                 parentTag.toLowerCase() in {input: 1, textarea: 1}) {
                 return;
             }
-            savedRange = nativeSel && sel.getRanges()[ 0 ];
+            savedRange = nativeSel && sel.getRanges()[0];
             // S.log("monitor ing...");
             // 同时检测，不同则 editor 触发 selectionChange
             editor.checkSelectionChange();
@@ -350,7 +350,7 @@ function monitorSelectionChange(editor) {
     // 光标可以不能放在里面
     function cannotCursorPlaced(element) {
         var dtd = Editor.XHTML_DTD;
-        return element._4eIsBlockBoundary() && dtd.$empty[ element.nodeName() ];
+        return element._4eIsBlockBoundary() && dtd.$empty[element.nodeName()];
     }
 
     function isNotEmpty(node) {
@@ -420,7 +420,7 @@ function monitorSelectionChange(editor) {
                 if (isBlankParagraph(fixedBlock)) {
                     var element = fixedBlock.next(nextValidEl, 1);
                     if (element &&
-                        element[0].nodeType === Dom.NodeType.ELEMENT_NODE && !cannotCursorPlaced[ element ]) {
+                        element[0].nodeType === Dom.NodeType.ELEMENT_NODE && !cannotCursorPlaced[element]) {
                         range.moveToElementEditablePosition(element);
                         fixedBlock._4eRemove();
                     } else {

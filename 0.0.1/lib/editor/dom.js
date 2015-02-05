@@ -101,7 +101,7 @@ var blockBoundaryDisplayMatch = {
         // 是否是块状元素或块状元素边界
         _4eIsBlockBoundary: function (el, customNodeNames) {
             var nodeNameMatches = util.merge(blockBoundaryNodeNameMatch, customNodeNames);
-            return !!(blockBoundaryDisplayMatch[ Dom.css(el, 'display') ] || nodeNameMatches[ Dom.nodeName(el) ]);
+            return !!(blockBoundaryDisplayMatch[Dom.css(el, 'display')] || nodeNameMatches[Dom.nodeName(el)]);
         },
 
         // 返回当前元素在父元素中所有儿子节点中的序号
@@ -178,7 +178,7 @@ var blockBoundaryDisplayMatch = {
             // ie 使用版本 < 8
             if (UA.ieMode < 8) {
                 for (i = 0; i < otherLength; i++) {
-                    attribute = otherAttributes[ i ];
+                    attribute = otherAttributes[i];
                     name = attribute.name;
                     if (attribute.specified &&
                         Dom.attr(thisElement, name) !== Dom.attr(otherElement, name)) {
@@ -290,7 +290,7 @@ var blockBoundaryDisplayMatch = {
             var parents = [];
             parents.__IS_NODELIST = 1;
             do {
-                parents[  closerFirst ? 'push' : 'unshift' ](node);
+                parents[closerFirst ? 'push' : 'unshift'](node);
             } while ((node = node.parentNode));
             return parents;
         },
@@ -490,8 +490,8 @@ var blockBoundaryDisplayMatch = {
 
             // Determinate preceed/follow relationship.
             for (var i = 0; i <= minLevel - 1; i++) {
-                if (addressOfThis[ i ] !== addressOfOther[ i ]) {
-                    return addressOfThis[ i ] < addressOfOther[ i ] ?
+                if (addressOfThis[i] !== addressOfOther[i]) {
+                    return addressOfThis[i] < addressOfOther[i] ?
                         KEP.POSITION_PRECEDING : KEP.POSITION_FOLLOWING;
                 }
             }
@@ -674,8 +674,8 @@ var blockBoundaryDisplayMatch = {
         _4eIsEditable: function (el) {
             // Get the element DTD (defaults to span for unknown elements).
             var name = Dom.nodeName(el),
-                dtd = !xhtmlDtd.$nonEditable[ name ] &&
-                    (xhtmlDtd[ name ] || xhtmlDtd.span);
+                dtd = !xhtmlDtd.$nonEditable[name] &&
+                    (xhtmlDtd[name] || xhtmlDtd.span);
             // In the DTD # === text node.
             return dtd && dtd['#text'];
         },
@@ -685,17 +685,17 @@ var blockBoundaryDisplayMatch = {
             var $ = doc.documentElement;
 
             for (var i = 0; $ && i < address.length; i++) {
-                var target = address[ i ];
+                var target = address[i];
 
                 if (!normalized) {
-                    $ = $.childNodes[ target ];
+                    $ = $.childNodes[target];
                     continue;
                 }
 
                 var currentIndex = -1;
 
                 for (var j = 0; j < $.childNodes.length; j++) {
-                    var candidate = $.childNodes[ j ];
+                    var candidate = $.childNodes[j];
 
                     if (normalized === TRUE &&
                         candidate.nodeType === 3 &&

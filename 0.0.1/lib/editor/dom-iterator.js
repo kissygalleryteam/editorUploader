@@ -249,7 +249,7 @@ util.augment(Iterator, {
             block = startPath.block;
 
             if ((!block || !block[0]) && !self.enforceRealBlocks &&
-                checkLimits[ startBlockLimit.nodeName() ] &&
+                checkLimits[startBlockLimit.nodeName()] &&
                 range.checkStartOfBlock() &&
                 range.checkEndOfBlock()) {
                 block = startBlockLimit;

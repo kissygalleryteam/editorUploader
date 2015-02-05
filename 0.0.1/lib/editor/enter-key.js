@@ -23,10 +23,10 @@ function getRange(editor) {
     var ranges = editor.getSelection().getRanges();
     // Delete the contents of all ranges except the first one.
     for (var i = ranges.length - 1; i > 0; i--) {
-        ranges[ i ].deleteContents();
+        ranges[i].deleteContents();
     }
     // Return the first range.
-    return ranges[ 0 ];
+    return ranges[0];
 }
 
 function enterBlock(editor) {
@@ -148,14 +148,14 @@ function enterBlock(editor) {
         var elementPath = splitInfo.elementPath;
         if (elementPath) {
             for (var i = 0, len = elementPath.elements.length; i < len; i++) {
-                var element = elementPath.elements[ i ];
+                var element = elementPath.elements[i];
 
                 if (element.equals(elementPath.block) ||
                     element.equals(elementPath.blockLimit)) {
                     break;
                 }
                 //<li><strong>^</strong></li>
-                if (dtd.$removeEmpty[ element.nodeName() ]) {
+                if (dtd.$removeEmpty[element.nodeName()]) {
                     element = element.clone();
                     newBlock._4eMoveChildren(element);
                     newBlock.append(element);

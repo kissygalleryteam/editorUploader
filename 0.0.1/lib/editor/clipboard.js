@@ -157,7 +157,7 @@ util.augment(Paste, {
             // Cut, Copy - check if the selection is not empty
             var sel = editor.getSelection(),
                 ranges = sel && sel.getRanges();
-            ret = ranges && !(ranges.length === 1 && ranges[ 0 ].collapsed);
+            ret = ranges && !(ranges.length === 1 && ranges[0].collapsed);
         }
 
         return ret;

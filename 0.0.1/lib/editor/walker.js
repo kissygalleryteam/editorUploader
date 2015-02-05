@@ -100,7 +100,7 @@ function iterate(rtl, breakOnFalseRetFalse) {
     }
 
     if (self.current) {
-        node = this.current[ getSourceNodeFn ](FALSE, type, guard);
+        node = this.current[getSourceNodeFn](FALSE, type, guard);
     } else {
         // Get the first node to be returned.
 
@@ -139,7 +139,7 @@ function iterate(rtl, breakOnFalseRetFalse) {
         } else if (breakOnFalseRetFalse && self.evaluator) {
             return FALSE;
         }
-        node = node[ getSourceNodeFn ](FALSE, type, guard);
+        node = node[getSourceNodeFn](FALSE, type, guard);
     }
 
     self.end();
@@ -337,7 +337,7 @@ util.mix(Walker, {
     }
 });
 
-var tailNbspRegex = /^[\t\r\n ]*(?:&nbsp;|\xa0)$/,
+var tailNbspRegex = /^[\t\r\n]*(?:&nbsp;|\xa0)$/,
     isWhitespaces = Walker.whitespaces(),
     isBookmark = Walker.bookmark(),
     toSkip = function (node) {

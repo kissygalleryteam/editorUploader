@@ -1,4 +1,4 @@
-/*compiled by xtemplate#3.3.1*/
+/*compiled by xtemplate#3.7.1*/
 var ret = module.exports = function main(undefined){
 var t;
 var t0;
@@ -40,26 +40,26 @@ var debuggerCommand = nativeCommands["debugger"];
 function func2(scope, buffer, undefined) {
 var data = scope.data;
 var affix = scope.affix;
-buffer.data += '\r\nstyle="overflow:scroll;-webkit-overflow-scrolling:touch;"\r\n';
+buffer.data += '\nstyle="overflow:scroll;-webkit-overflow-scrolling:touch;"\n';
 return buffer;
 }
 function func5(scope, buffer, undefined) {
 var data = scope.data;
 var affix = scope.affix;
-buffer.data += '\r\n';
+buffer.data += '\n';
 pos.line = 20;
 var id6 = ((t=(affix.xindex)) !== undefined ? t:((t = data.xindex) !== undefined ? t :scope.resolveLooseUp(["xindex"])));
 buffer = buffer.writeEscaped(id6);
 buffer.data += '="';
 var id7 = data;
 buffer = buffer.writeEscaped(id7);
-buffer.data += '"\r\n';
+buffer.data += '"\n';
 return buffer;
 }
 function func9(scope, buffer, undefined) {
 var data = scope.data;
 var affix = scope.affix;
-buffer.data += '\r\nstyle="display:none"\r\n';
+buffer.data += '\nstyle="display:none"\n';
 return buffer;
 }
 
@@ -68,37 +68,37 @@ buffer.data += '<div class="';
 pos.line = 1;
 var id0 = ((t=(affix.prefixCls)) !== undefined ? t:((t = data.prefixCls) !== undefined ? t :scope.resolveLooseUp(["prefixCls"])));
 buffer = buffer.writeEscaped(id0);
-buffer.data += 'editor-tools">\r\n\r\n</div>\r\n\r\n';
-buffer.data += '\r\n\r\n<div class="';
+buffer.data += 'editor-tools">\n\n</div>\n\n';
+buffer.data += '\n\n<div class="';
 pos.line = 10;
 var id1 = ((t=(affix.prefixCls)) !== undefined ? t:((t = data.prefixCls) !== undefined ? t :scope.resolveLooseUp(["prefixCls"])));
 buffer = buffer.writeEscaped(id1);
-buffer.data += 'editor-textarea-wrap"\r\n\r\n';
+buffer.data += 'editor-textarea-wrap"\n\n';
 pos.line = 12;
 var id3 = ((t=(affix.mobile)) !== undefined ? t:((t = data.mobile) !== undefined ? t :scope.resolveLooseUp(["mobile"])));
 buffer = ifCommand.call(tpl, scope, {params:[id3],fn: func2}, buffer);
-buffer.data += '\r\n>\r\n\r\n<textarea class="';
+buffer.data += '\n>\n\n<textarea class="';
 pos.line = 17;
 var id4 = ((t=(affix.prefixCls)) !== undefined ? t:((t = data.prefixCls) !== undefined ? t :scope.resolveLooseUp(["prefixCls"])));
 buffer = buffer.writeEscaped(id4);
-buffer.data += 'editor-textarea"\r\n\r\n';
+buffer.data += 'editor-textarea"\n\n';
 pos.line = 19;
 pos.line = 19;
 var id8 = ((t=(affix.textareaAttrs)) !== undefined ? t:((t = data.textareaAttrs) !== undefined ? t :scope.resolveLooseUp(["textareaAttrs"])));
 buffer = eachCommand.call(tpl, scope, {params:[id8],fn: func5}, buffer);
-buffer.data += '\r\n\r\n';
+buffer.data += '\n\n';
 pos.line = 23;
 var id10 = ((t=(affix.mode)) !== undefined ? t:((t = data.mode) !== undefined ? t :scope.resolveLooseUp(["mode"])));
 buffer = ifCommand.call(tpl, scope, {params:[id10],fn: func9}, buffer);
-buffer.data += '\r\n\r\n>';
+buffer.data += '\n\n>';
 pos.line = 27;
 var id11 = ((t=(affix.data)) !== undefined ? t:((t = data.data) !== undefined ? t :scope.resolveLooseUp(["data"])));
 buffer = buffer.writeEscaped(id11);
-buffer.data += '</textarea>\r\n\r\n</div>\r\n\r\n<div class="';
+buffer.data += '</textarea>\n\n</div>\n\n<div class="';
 pos.line = 31;
 var id12 = ((t=(affix.prefixCls)) !== undefined ? t:((t = data.prefixCls) !== undefined ? t :scope.resolveLooseUp(["prefixCls"])));
 buffer = buffer.writeEscaped(id12);
-buffer.data += 'editor-status">\r\n\r\n</div>\r\n';
+buffer.data += 'editor-status">\n\n</div>\n';
 return buffer;
 };
 ret.TPL_NAME = module.id || module.name;

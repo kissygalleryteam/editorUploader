@@ -19,6 +19,13 @@ var stylish = require('jshint-stylish');
 var jscs = require('gulp-jscs');
 var replace = require('gulp-replace');
 var minifyCSS = require('gulp-minify-css');
+var date = new Date();
+
+var header = ['//!',
+        'Copyright ' + date.getFullYear() + ', ' + packageInfo.name + '@' + packageInfo.version,
+        packageInfo.license + ' Licensed,',
+        'build time: ' + (date.toGMTString()),
+    '\n'].join(' ');
 
 gulp.task('lint', function () {
     return gulp.src(['./lib/**/*.js', '!./lib/**/xtpl/**/*.js'])
@@ -41,12 +48,6 @@ gulp.task('tag', function (done) {
 });
 
 var wrapper = require('gulp-wrapper');
-var date = new Date();
-var header = ['/*',
-        'Copyright ' + date.getFullYear() + ', ' + packageInfo.name + '@' + packageInfo.version,
-        packageInfo.license + ' Licensed',
-        'build time: ' + (date.toGMTString()),
-    '*/', ''].join('\n');
     
 gulp.task('build', ['lint','less','xtpl'], function (done) {
     var async = require('async');
@@ -81,11 +82,30 @@ gulp.task('build', ['lint','less','xtpl'], function (done) {
                 .pipe(wrapper({
                     header: header
                 }))
+				.pipe(replace(/modulex\.add\("editor(.)/, function(nul, match) {
+					if ('"' === match) {
+						return 'define("kg/editor/0.0.1/index"';		
+					}
+					return 'define("kg/editor/0.0.1' + match;		
+				 }))
+				.pipe(replace(/modulex.config\(([^)]+)\)/g, function(nul, match) {
+					return 'KISSY.config({' + match.replace(/"requires"\s*,/, '"modules":') + '});';	  
+				 }))
+				.pipe(replace(/"component\//g, '"kg/component/0.0.1/'))
+				.pipe(replace(/"html\-parser"/g, '"kg/html-parser/0.0.1/"'))
+				.pipe(replace(/"xtemplate\//g, '"kg/xtemplate/4.1.4/'))
+				.pipe(rename(function(path) {
+					path.basename = path.basename.replace('-debug', '').replace(/editor$/, 'index').replace(/editor-deps$/, 'index-deps');	
+				 }))
                 .pipe(gulp.dest(path.resolve(build, dirname)))
-                .pipe(filter(basename + '-debug.js'))
+                .pipe(filter(['*.js', '!*-deps.js']))
                 .pipe(replace(/@DEBUG@/g, ''))
-                .pipe(uglify())
-                .pipe(rename(basename + '.js'))
+                .pipe(uglify({
+					preserveComments: 'some'
+				 }))
+                .pipe(rename(function(path) {
+					path.extname = '-min.js';	
+				 }))
                 .pipe(gulp.dest(path.resolve(build, dirname))).on('end', done);
         });
     });

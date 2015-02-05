@@ -148,7 +148,7 @@ util.augment(KESelection, {
                 if (startContainer === range.endContainer &&
                     startContainer.nodeType === Dom.NodeType.ELEMENT_NODE &&
                     Number(range.endOffset - range.startOffset) === 1 &&
-                    styleObjectElements[ startContainer.childNodes[ range.startOffset ].nodeName.toLowerCase() ]) {
+                    styleObjectElements[startContainer.childNodes[range.startOffset].nodeName.toLowerCase()]) {
                     type = KES.SELECTION_ELEMENT;
                 }
             }
@@ -206,7 +206,7 @@ util.augment(KESelection, {
                     testRange;
 
                 for (var i = 0; i < siblings.length; i++) {
-                    var child = siblings[ i ];
+                    var child = siblings[i];
 
                     if (child.nodeType === Dom.NodeType.ELEMENT_NODE) {
                         testRange = range.duplicate();
@@ -251,7 +251,7 @@ util.augment(KESelection, {
                         //永远不会出现 textnode<img/>textnode
                         //停止时，前面一定为textnode
                     {
-                        distance -= siblings[ --i ].nodeValue.length;
+                        distance -= siblings[--i].nodeValue.length;
                     }
                 } catch (e) {
                     // Measurement in IE could be somtimes wrong because of <select> element. (#4611)
@@ -265,7 +265,7 @@ util.augment(KESelection, {
                     };
                 } else {
                     return {
-                        container: siblings[ i ],
+                        container: siblings[i],
                         offset: -distance
                     };
                 }
@@ -468,7 +468,7 @@ util.augment(KESelection, {
         // 处理 ^  <img/>  ^
         if (!node) {
             node = (function () {
-                var range = self.getRanges()[ 0 ],
+                var range = self.getRanges()[0],
                     enclosed,
                     selected;
 
@@ -480,7 +480,7 @@ util.augment(KESelection, {
                      i && !((enclosed = range.getEnclosedNode()) &&
                          (enclosed[0].nodeType === Dom.NodeType.ELEMENT_NODE) &&
                          // 某些值得这么多的元素？？
-                         styleObjectElements[ enclosed.nodeName() ] &&
+                         styleObjectElements[enclosed.nodeName()] &&
                          (selected = enclosed));
                      i--) {
                     // Then check any deep wrapped element
@@ -544,15 +544,15 @@ util.augment(KESelection, {
         if (OLD_IE) {
             if (ranges.length > 1) {
                 // IE doesn't accept multiple ranges selection, so we join all into one.
-                var last = ranges[ ranges.length - 1 ];
-                ranges[ 0 ].setEnd(last.endContainer, last.endOffset);
+                var last = ranges[ranges.length - 1];
+                ranges[0].setEnd(last.endContainer, last.endOffset);
                 ranges.length = 1;
             }
 
             // IE doesn't accept multiple ranges selection, so we just
             // select the first one.
-            if (ranges[ 0 ]) {
-                ranges[ 0 ].select();
+            if (ranges[0]) {
+                ranges[0].select();
             }
 
             self.reset();
@@ -563,7 +563,7 @@ util.augment(KESelection, {
             }
             sel.removeAllRanges();
             for (var i = 0; i < ranges.length; i++) {
-                var range = ranges[ i ],
+                var range = ranges[i],
                     nativeRange = self.document.createRange(),
                     startContainer = range.startContainer;
 
@@ -608,7 +608,7 @@ util.augment(KESelection, {
         ranges = ranges || self.getRanges();
         var length = ranges.length;
         for (var i = 0; i < length; i++) {
-            retval.push(bookmark = ranges[ i ].createBookmark(serializable, TRUE));
+            retval.push(bookmark = ranges[i].createBookmark(serializable, TRUE));
             serializable = bookmark.serializable;
 
             var bookmarkStart = serializable ? $('#' + bookmark.startNode, doc) : bookmark.startNode,
@@ -616,7 +616,7 @@ util.augment(KESelection, {
 
             // Updating the offset values for rest of ranges which have been mangled(#3256).
             for (var j = i + 1; j < length; j++) {
-                var dirtyRange = ranges[ j ],
+                var dirtyRange = ranges[j],
                     rangeStart = dirtyRange.startContainer,
                     rangeEnd = dirtyRange.endContainer;
 
@@ -651,8 +651,8 @@ util.augment(KESelection, {
 
     getCommonAncestor: function () {
         var ranges = this.getRanges(),
-            startNode = ranges[ 0 ].startContainer,
-            endNode = ranges[ ranges.length - 1 ].endContainer;
+            startNode = ranges[0].startContainer,
+            endNode = ranges[ranges.length - 1].endContainer;
         return startNode._4eCommonAncestor(endNode);
     },
 

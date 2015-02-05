@@ -52,7 +52,7 @@ var Dom = require('dom'),
         for (var i = 0, count = childNodes.length; i < count; i++) {
             var child = childNodes[i];
             if (child.nodeType === Dom.NodeType.ELEMENT_NODE &&
-                dtd.$block[ child.nodeName.toLowerCase() ]) {
+                dtd.$block[child.nodeName.toLowerCase()]) {
                 return TRUE;
             }
         }
@@ -79,10 +79,10 @@ function ElementPath(lastNode) {
             var elementName = e.nodeName();
 
             if (!blockLimit) {
-                if (!block && pathBlockElements[ elementName ]) {
+                if (!block && pathBlockElements[elementName]) {
                     block = e;
                 }
-                if (pathBlockLimitElements[ elementName ]) {
+                if (pathBlockLimitElements[elementName]) {
                     // DIV is considered the Block, if no block is available (#525)
                     // and if it doesn't contain other blocks.
                     if (!block && elementName === 'div' && !checkHasBlock(e)) {
@@ -125,7 +125,7 @@ ElementPath.prototype = {
         }
 
         for (var i = 0; i < thisElements.length; i++) {
-            if (!Dom.equals(thisElements[ i ], otherElements[ i ])) {
+            if (!Dom.equals(thisElements[i], otherElements[i])) {
                 return FALSE;
             }
         }
@@ -136,8 +136,8 @@ ElementPath.prototype = {
     contains: function (tagNames) {
         var elements = this.elements;
         for (var i = 0; i < elements.length; i++) {
-            if (elements[ i ].nodeName() in tagNames) {
-                return elements[ i ];
+            if (elements[i].nodeName() in tagNames) {
+                return elements[i];
             }
         }
         return NULL;

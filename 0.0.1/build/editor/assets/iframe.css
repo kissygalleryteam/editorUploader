@@ -24,7 +24,7 @@ table{border-collapse:separate}
 blockquote,dl,ol,ul{margin:1em}
 dl,ol,ul{margin-left:2em}
 dl dd{margin-left:1em}
-table.k-e-collapse-table >tbody>tr>td,table.k-e-collapse-table >tbody>tr>th{border-color:#000}
+table.k-e-collapse-table>tbody>tr>td,table.k-e-collapse-table>tbody>tr>th{border-color:#000}
 th{font-weight:700}
 caption{margin-bottom:.5em;white-space:nowrap}
 ol,ul{margin-left:0;padding-left:40px}
