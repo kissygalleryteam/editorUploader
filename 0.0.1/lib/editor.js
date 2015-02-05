@@ -1073,7 +1073,7 @@ function fixByBindIframeDoc(self) {
 function prepareIFrameHTML(id, customStyle, customLink, data) {
     var links = '';
     var i;
-    var innerCssFile = new _URL('./editor/assets/iframe.css', '//g.alicdn.com/kg/editor/0.0.1/').toString();
+    var innerCssFile = new _URL('./editor/assets/iframe.css', location.protocol + '//g.alicdn.com/kg/editor/0.0.1/').href;
     customLink = customLink.concat([]);
     customLink.unshift(innerCssFile);
     for (i = 0; i < customLink.length; i++) {

@@ -1,4 +1,4 @@
-//! Copyright 2015, kissy-gallery-editor@1.0.2 MIT Licensed, build time: Thu, 05 Feb 2015 13:32:20 GMT 
+//! Copyright 2015, kissy-gallery-editor@1.0.2 MIT Licensed, build time: Thu, 05 Feb 2015 13:34:34 GMT 
 define("kg/editor/0.0.1/index", ["kg/html-parser/0.0.1/","ua","node","util","kg/xtemplate/4.1.4/runtime","kg/component/0.0.1/control","dom","url"], function(require, exports, module) {
 var htmlParser = require("kg/html-parser/0.0.1/");
 var ua = require("ua");
@@ -5459,7 +5459,7 @@ _editor_ = function (exports) {
   function prepareIFrameHTML(id, customStyle, customLink, data) {
     var links = '';
     var i;
-    var innerCssFile = new _URL('./editor/assets/iframe.css', '//g.alicdn.com/kg/editor/0.0.1/').toString();
+    var innerCssFile = new _URL('./editor/assets/iframe.css', location.protocol + '//g.alicdn.com/kg/editor/0.0.1/').href;
     customLink = customLink.concat([]);
     customLink.unshift(innerCssFile);
     for (i = 0; i < customLink.length; i++) {
