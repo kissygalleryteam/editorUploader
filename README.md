@@ -1,19 +1,28 @@
-## editorUploader
-kissy editor的图片上传由于是使用flash上传，很有可能会出现session丢失的bug，所以写了这个插件用于替换editor的上传插件。
+# editor
 
-v1.4基于kissy1.4，使用[uploader1.5](http://gallery.kissyui.com/uploader/1.5/guide/index.html)。
+ui editor core
 
-
-* 版本：1.4
-* 作者：明河
-
-## 组件变更
-
-### V1.4 change
-
-    [!]基于kissy1.4
-    [!]基于uploader1.5
-    [!]使用通用接口，简化配置
-    [!]优化代码
+[![editor](https://nodei.co/npm/modulex-editor.png)](https://npmjs.org/package/modulex-editor)
+[![NPM downloads](http://img.shields.io/npm/dm/modulex-editor.svg)](https://npmjs.org/package/modulex-editor)
+[![Build Status](https://secure.travis-ci.org/kissyteam/editor.png?branch=master)](https://travis-ci.org/kissyteam/editor)
+[![Coverage Status](https://img.shields.io/coveralls/kissyteam/editor.svg)](https://coveralls.io/r/kissyteam/editor?branch=master)
+[![Dependency Status](https://gemnasium.com/kissyteam/editor.png)](https://gemnasium.com/kissyteam/editor)
+[![Bower version](https://badge.fury.io/bo/modulex-editor.svg)](http://badge.fury.io/bo/modulex-editor)
+[![node version](https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square)](http://nodejs.org/download/)
 
 
+## How To Contribute
+
+```
+npm install gulp bower -g
+npm install
+bower install
+gulp mx
+npm start
+```
+
+see ``demo/index.html`` for script reference.
+
+## License
+
+editor is released under the MIT license.
